@@ -1,14 +1,14 @@
-// #include <ThrusterController.hpp>
+#include <ThrusterController.hpp>
 
 
+ThrusterController thruster_controller;
 
 void setup()
 {
-  Serial.begin(15200);
+  thruster_controller.setup();
 }
 
 void loop()
 {
-  Serial.println("It works!");
-  delay(1000);
+  thruster_controller.update();
 }
