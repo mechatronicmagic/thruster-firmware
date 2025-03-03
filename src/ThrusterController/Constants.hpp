@@ -18,11 +18,16 @@ extern const size_t stop_pin;
 
 extern const size_t loop_delay;
 
-extern const PCA9685::Channel channel;
+extern const PCA9685::Channel channel_min;
+extern const PCA9685::Channel channel_max;
 
 extern const PCA9685::DurationMicroseconds servo_pulse_duration_min;
 extern const PCA9685::DurationMicroseconds servo_pulse_duration_max;
 extern const PCA9685::DurationMicroseconds servo_pulse_duration_mid;
-extern const PCA9685::DurationMicroseconds servo_pulse_duration_inc;
+
+extern const int16_t position_max_neg;
+extern const int16_t position_max_pos;
+extern const int16_t position_mid;
+extern const int16_t position_inc_default;
 }
 #endif

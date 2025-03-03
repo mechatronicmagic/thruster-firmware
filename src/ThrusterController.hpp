@@ -18,8 +18,11 @@ public:
   void update();
 private:
   PCA9685 pca9685_;
-  PCA9685::DurationMicroseconds servo_pulse_duration_;
-  int16_t servo_pulse_duration_inc_;
+  int16_t position_;
+  int16_t position_inc_;
+
+  PCA9685::DurationMicroseconds positionToServoPulseDuration(int16_t position);
+  void setChannelServoPosition(PCA9685::Channel channel, int16_t position);
 };
 
 #endif
