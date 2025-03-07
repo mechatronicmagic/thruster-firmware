@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------
 #include "ThrusterController.hpp"
 #include "Constants.hpp"
+#include "Ble.hpp"
 
 
 void ThrusterController::setup()
@@ -17,6 +18,8 @@ void ThrusterController::setup()
   position_inc_ = constants::position_inc_default;
 
   pinMode(constants::stop_pin, INPUT);
+
+  ble_init();
 }
 
 void ThrusterController::update()
@@ -53,6 +56,12 @@ void ThrusterController::update()
     }
   }
   position_ += position_inc_;
+
+  // get command
+  ble_cmd_t ble_cmd = ble_command();
+  int32_t ble_cmd_timestamp = ble_command_timestamp();
+  Serial.print("ble_cmd.thrusters[0]: ");
+  Serial.println(ble_cmd.thrusters[0]);
 
   delay(constants::loop_delay);
 }
