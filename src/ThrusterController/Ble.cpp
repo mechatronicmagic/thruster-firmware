@@ -12,7 +12,7 @@ typedef struct __attribute__((packed)) {
 
 
 ble_cmd_t volatile static _ble_command = {0};
-int32_t volatile static _ble_command_ms = -0x80000000;
+unsigned long volatile static _ble_command_ms = 0;
 
 void ble_scan_callback (ble_gap_evt_adv_report_t * report)
 {
@@ -46,6 +46,6 @@ ble_cmd_t ble_command (void)
 }
 
 
-int32_t ble_command_timestamp (void) {
+unsigned long ble_command_timestamp (void) {
   return _ble_command_ms;
 }

@@ -12,6 +12,6 @@ typedef struct __attribute__((packed)) {
 
 void ble_init (void);
 ble_cmd_t ble_command (void);
-int32_t ble_command_timestamp (void);
+unsigned long ble_command_timestamp (void);
 
 #endif // __BLE_HPP

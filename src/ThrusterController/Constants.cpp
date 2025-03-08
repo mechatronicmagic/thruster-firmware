@@ -25,7 +25,13 @@ const PCA9685::DurationMicroseconds servo_pulse_duration_mid = 1500;
 const int16_t position_max_neg = -600;
 const int16_t position_max_pos = 600;
 const int16_t position_mid = 0;
+
 const int16_t position_inc_default = 12;
-// const int16_t position_inc_default = 1;
-// const int16_t position_inc_default = 120;
+const int16_t position_inc_min = 1;
+const int16_t position_inc_max = 120;
+
+const int16_t ble_speed_min = 0;
+const int16_t ble_speed_max = 255;
+
+const unsigned long ble_idle_duration_ms = 2000;
 }

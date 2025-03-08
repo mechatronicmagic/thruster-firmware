@@ -6,6 +6,8 @@
 
 //#define __SERIAL
 
+uint8_t thrust;
+
 void setup ()
 {
 #ifdef __SERIAL
@@ -15,6 +17,8 @@ void setup ()
 
   power_init();
   blue_init();
+
+  thrust = 55;
 }
 
 
@@ -23,8 +27,6 @@ void loop ()
   ble_cmd_t static data = {0};
 
   // set thruster speeds
-
-  uint8_t thrust = 55;
 
   uint8_t static thruster_id = 7;
 
@@ -40,6 +42,8 @@ void loop ()
   }
 
   blue_send(&data);
+
+  thrust += 1;
 
   power_check();
 
